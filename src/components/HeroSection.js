@@ -1,5 +1,7 @@
+// src/components/HeroSection.js
 import React from 'react';
-import '../styles.css'
+import { Link as ScrollLink } from 'react-scroll';
+import '../styles.css';
 
 function HeroSection() {
   return (
@@ -12,13 +14,16 @@ function HeroSection() {
           Discover my work and experience in software development.
         </p>
         <div className="flex justify-center space-x-4">
-          {/* Button that scrolls to the Projects section */}
-          <a
-            href="#contact"
-            className="button-contact"
+          {/* Smooth scroll to the Contact section */}
+          <ScrollLink
+            to="contact-section"
+            smooth={true}
+            duration={500}
+            offset={-50}  // adjusts for header height
+            className="button-contact cursor-pointer"
           >
             Contact Me
-          </a>
+          </ScrollLink>
         </div>
       </div>
     </div>

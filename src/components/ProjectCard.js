@@ -20,6 +20,7 @@ function ProjectCard({ title, description, imageUrl, githubLink, moreInfoLink, f
         src={imageUrl}
         alt={`${title} Thumbnail`}
         className="w-full h-48 object-cover"
+        loading='lazy'
       />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -43,6 +44,7 @@ function ProjectCard({ title, description, imageUrl, githubLink, moreInfoLink, f
               src={imageUrl}
               alt={title}
               className="w-96 h-64 object-cover"
+              loading='lazy'
             />
           </div>
           

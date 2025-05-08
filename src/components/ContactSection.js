@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 function ContactSection() {
   return (
-    <section id="contact" className="bg-gray-50 py-20">
+    <section id="contact-section" className="bg-gray-50 py-20">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
           Get in Touch

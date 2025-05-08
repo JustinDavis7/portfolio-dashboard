@@ -1,13 +1,13 @@
 // src/components/ProjectsSection.js
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import { motion } from 'framer-motion';
 
-// Array of project data
 const projects = [
   {
     title: "Steam Info Network",
     description: "A platform for tracking progress and competing with friends in Steam games, with an option for SMS updates.",
-    imageUrl: "/images/TeamLogo.png",
+    imageUrl: `${process.env.PUBLIC_URL}/images/TeamLogo.png`,
     githubLink: "https://github.com/SWoinowsky/ProjectTeamPlus",
     moreInfoLink: "/steam-info-network",
     features: [
@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Maintenance Tracker",
     description: "Streamline equipment and maintenance management with role-based access and interactive dashboards.",
-    imageUrl: "/images/Project Maintenance Picture.png",
+    imageUrl: `${process.env.PUBLIC_URL}/images/Project%20Maintenance%20Picture.png`,
     githubLink: "https://github.com/JustinDavis7/MaintenanceTracker",
     moreInfoLink: "/maintenance-tracker",
     features: [
@@ -35,7 +35,7 @@ const projects = [
   {
     title: "Raffler",
     description: "A custom-made random name picker for reliable raffles and screenings.",
-    imageUrl: "/images/Raffler Logo.png",
+    imageUrl: `${process.env.PUBLIC_URL}/images/Raffler%20Logo.png`,
     githubLink: "https://github.com/JustinDavis7/my-code-playground/tree/main/Demos/Raffle%20C%23%20Desktop%20Application/Raffler",
     moreInfoLink: "/raffler",
     features: [
@@ -54,10 +54,16 @@ function ProjectsSection() {
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-semibold text-blue-500 mb-10">My Projects</h2>
 
-        {/* Responsive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+            >
+              <ProjectCard {...project} />
+            </motion.div>
           ))}
         </div>
       </div>

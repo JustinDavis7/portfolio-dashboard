@@ -41,7 +41,7 @@ html {
     color: #3b82f6; /* blue-500 */
     padding: 0.75rem 1.5rem; /* px-6 py-3 */
     border-radius: 9999px; /* rounded-full */
-    transition: background-color 0.2s ease;
+    transition: background-color 0.4s ease;
 }
 
 .button-projects:hover {
@@ -54,12 +54,13 @@ html {
     color: white;
     padding: 0.75rem 1.5rem; /* px-6 py-3 */
     border-radius: 9999px; /* rounded-full */
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
   
 .button-contact:hover {
-    background-color: white;
-    color: #3b82f6; /* blue-500 */
+    background-color: #e5e7eb;
+    transform: scale(1.05); /* Slightly grows on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow */
 }
   
 /* styles.css */
@@ -68,6 +69,7 @@ html {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card img {
@@ -101,3 +103,7 @@ html {
     color: #2563eb; /* darker blue on hover */
 }
   
+.project-card:hover {
+    transform: translateY(-5px); /* Moves up a little */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}

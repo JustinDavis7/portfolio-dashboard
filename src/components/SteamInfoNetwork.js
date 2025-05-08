@@ -2,6 +2,7 @@
 import React from 'react';
 import ListSection from './ListSection';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function SteamInfoNetwork() {
   const developmentDetails = [
@@ -21,18 +22,21 @@ function SteamInfoNetwork() {
   ];
 
   const screenshots = [
-    "/images/Project Team++ - 1.png",
-    "/images/Project Team++ - 2.png",
-    "/images/Project Team++ - 3.png",
-    "/images/Project Team++ - 4.png",
+    `${process.env.PUBLIC_URL}/images/Project%20Team%2B%2B%20-%201.png`,
+    `${process.env.PUBLIC_URL}/images/Project%20Team%2B%2B%20-%202.png`,
+    `${process.env.PUBLIC_URL}/images/Project%20Team%2B%2B%20-%203.PNG`,
+    `${process.env.PUBLIC_URL}/images/Project%20Team%2B%2B%20-%204.PNG`,
   ];
 
   return (
-    <div className="bg-gray-400 min-h-screen py-10">
-      {/* Card Layout */}
+    <motion.div
+      className="bg-gray-400 min-h-screen py-10"
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.4 }}
+    >
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-4xl mx-auto relative">
-        
-        {/* Back Button */}
         <Link 
           to="/" 
           className="absolute top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
@@ -41,9 +45,9 @@ function SteamInfoNetwork() {
         </Link>
 
         <h1 className="text-4xl font-bold mb-4 text-gray-800">Steam Info Network</h1>
-        
+
         <img 
-          src="/images/TeamLogo.png" 
+          src={`${process.env.PUBLIC_URL}/images/TeamLogo.png`}
           alt="Steam Info Network" 
           className="w-full h-64 object-cover mb-4 rounded-lg"
         />
@@ -69,7 +73,7 @@ function SteamInfoNetwork() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
